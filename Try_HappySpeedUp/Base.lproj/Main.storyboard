@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController id="LVB-YS-i5n" customClass="GameViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="LVB-YS-i5n" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
                         <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
@@ -21,5 +23,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="xZo-Se-FMC">
+            <objects>
+                <viewController storyboardIdentifier="GameOverViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XFZ-mn-rdo" customClass="GameOverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HKK-Yd-rg2"/>
+                        <viewControllerLayoutGuide type="bottom" id="ffE-wK-Rfn"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.89999997615814209" contentMode="scaleToFill" id="3tH-Pa-GKA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="geme_fail_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="oor-i1-vf1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="gameover.png" translatesAutoresizingMaskIntoConstraints="NO" id="ktn-Tg-vsd">
+                                <rect key="frame" x="140" y="125" width="320" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="58C-qD-0Pb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="TNH-JS-VMt"/>
+                                    <constraint firstAttribute="height" constant="102" id="vZD-xN-boD"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TNH-JS-VMt"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0b-PL-WaZ">
+                                <rect key="frame" x="250" y="275" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Ea-u1-MRT"/>
+                                    <constraint firstAttribute="width" constant="100" id="xz8-1e-bxF"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="en_restart_btn01png.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="en_restart_btn02png.png"/>
+                                <connections>
+                                    <action selector="restartClick:" destination="XFZ-mn-rdo" eventType="touchUpInside" id="Fpn-Zq-Yy7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-dy-fAQ">
+                                <rect key="frame" x="314" y="236" width="88" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="7Zy-8b-n8m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Your Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-os-gWa">
+                                <rect key="frame" x="200" y="233" width="104" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="104" id="lgB-Wl-2cz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oor-i1-vf1" secondAttribute="trailing" id="98f-4G-n1e"/>
+                            <constraint firstItem="yyn-dy-fAQ" firstAttribute="baseline" secondItem="Nsh-os-gWa" secondAttribute="firstBaseline" id="Aut-xf-XIT"/>
+                            <constraint firstItem="Nsh-os-gWa" firstAttribute="left" secondItem="3tH-Pa-GKA" secondAttribute="centerX" constant="100" id="BM7-8l-bX4"/>
+                            <constraint firstItem="oor-i1-vf1" firstAttribute="leading" secondItem="3tH-Pa-GKA" secondAttribute="leading" id="BWN-2w-NmH"/>
+                            <constraint firstItem="Nsh-os-gWa" firstAttribute="top" secondItem="ktn-Tg-vsd" secondAttribute="bottom" constant="6" id="BxR-Ho-VrO"/>
+                            <constraint firstItem="oor-i1-vf1" firstAttribute="bottom" secondItem="ffE-wK-Rfn" secondAttribute="top" id="CwZ-vx-IaB"/>
+                            <constraint firstItem="oor-i1-vf1" firstAttribute="top" secondItem="3tH-Pa-GKA" secondAttribute="top" id="PLA-s6-dDX"/>
+                            <constraint firstItem="yyn-dy-fAQ" firstAttribute="top" secondItem="ktn-Tg-vsd" secondAttribute="bottom" constant="9" id="QtM-u6-vdq"/>
+                            <constraint firstItem="ktn-Tg-vsd" firstAttribute="top" secondItem="HKK-Yd-rg2" secondAttribute="bottom" constant="105" id="XW8-bc-DJ8"/>
+                            <constraint firstItem="ffE-wK-Rfn" firstAttribute="top" secondItem="Nsh-os-gWa" secondAttribute="bottom" constant="342" id="aBP-yb-dF7"/>
+                            <constraint firstItem="Nsh-os-gWa" firstAttribute="leading" secondItem="ktn-Tg-vsd" secondAttribute="centerX" constant="-100" id="aU2-Yq-oTm"/>
+                            <constraint firstItem="Z0b-PL-WaZ" firstAttribute="top" secondItem="yyn-dy-fAQ" secondAttribute="bottom" constant="17" id="dE6-PX-p0A"/>
+                            <constraint firstItem="ktn-Tg-vsd" firstAttribute="centerX" secondItem="oor-i1-vf1" secondAttribute="centerX" id="eS2-SO-9pe"/>
+                            <constraint firstItem="Z0b-PL-WaZ" firstAttribute="centerX" secondItem="ktn-Tg-vsd" secondAttribute="centerX" id="hgm-Ka-ODI"/>
+                            <constraint firstItem="Z0b-PL-WaZ" firstAttribute="leading" secondItem="3tH-Pa-GKA" secondAttribute="leading" constant="252" id="nA9-fz-f46"/>
+                            <constraint firstItem="yyn-dy-fAQ" firstAttribute="leading" secondItem="Nsh-os-gWa" secondAttribute="trailing" constant="10" id="qah-8S-FLb"/>
+                            <constraint firstItem="Z0b-PL-WaZ" firstAttribute="top" secondItem="Nsh-os-gWa" secondAttribute="bottom" constant="17" id="s0M-Rp-AAs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XW8-bc-DJ8"/>
+                                <exclude reference="BM7-8l-bX4"/>
+                                <exclude reference="nA9-fz-f46"/>
+                                <exclude reference="Aut-xf-XIT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="l8x-N3-kJ9"/>
+                    <connections>
+                        <outlet property="gameTimeLabel" destination="yyn-dy-fAQ" id="9ln-Gc-ews"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5M-Kq-ysX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="145"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="en_restart_btn01png.png" width="330" height="150"/>
+        <image name="en_restart_btn02png.png" width="330" height="150"/>
+        <image name="gameover.png" width="432" height="102"/>
+        <image name="geme_fail_bg.png" width="450" height="800"/>
+    </resources>
 </document>
