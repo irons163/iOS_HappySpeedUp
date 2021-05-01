@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "97B25E0C-3B36-42F1-945B-2ABA5BA5B847"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "51F53B1A-BE4D-4BCF-A84A-C6B06D55338D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -16,12 +18,13 @@
             startingLineNumber = "324"
             endingLineNumber = "324"
             landmarkName = "-createWallLineWithLeftX:WithRightX:WithY:enableOffsetX:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
+            uuid = "FE018F7A-A633-4268-90C5-0B25CCD6641F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -32,6 +35,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "294A6D02-FE84-49A7-BC9F-D8E233A8FA3C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -42,12 +46,13 @@
             startingLineNumber = "574"
             endingLineNumber = "574"
             landmarkName = "-checkEatTool"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "13367095-2AE1-4F88-A954-72B6FEEC069B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -58,12 +63,13 @@
             startingLineNumber = "637"
             endingLineNumber = "637"
             landmarkName = "-speedUp"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D98C95D2-9AFA-4334-B5F4-064F50E84032"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -74,12 +80,13 @@
             startingLineNumber = "652"
             endingLineNumber = "652"
             landmarkName = "-speedDown"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "42F448B6-8B7C-4FB0-89F5-915FE7D98476"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -90,7 +97,7 @@
             startingLineNumber = "497"
             endingLineNumber = "497"
             landmarkName = "-doWallMoveAndCollisionDetectedAndCreateAndRemoveWall"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
