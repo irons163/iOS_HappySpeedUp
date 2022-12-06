@@ -16,6 +16,6 @@
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval lastSpawnTimeInterval;
 
--(int)gameScoreForDistance;
+- (int)gameScoreForDistance;
 
 @end

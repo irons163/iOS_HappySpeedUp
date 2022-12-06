@@ -9,35 +9,28 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface TextureHelper : NSObject{
-//@public
-//    NSArray *hand1;
-}
+@interface TextureHelper : NSObject
 
-//@property (nonatomic,strong) NSArray* hand2Textures;
-
-+(NSArray *)hand1Textures;
-+(NSArray *)hand2Textures;
-+(NSArray *)hand3Textures;
++ (NSArray *)hand1Textures;
++ (NSArray *)hand2Textures;
++ (NSArray *)hand3Textures;
 + (NSArray *)hand4Textures;
 
-+(NSArray *)cat1Textures;
-+(NSArray *)cat2Textures;
-+(NSArray *)cat3Textures;
-+(NSArray *)cat4Textures;
-+(NSArray *)cat5Textures;
++ (NSArray *)cat1Textures;
++ (NSArray *)cat2Textures;
++ (NSArray *)cat3Textures;
++ (NSArray *)cat4Textures;
++ (NSArray *)cat5Textures;
 
-+(SKTexture *)hamsterInjureTexture;
++ (SKTexture *)hamsterInjureTexture;
++ (NSArray *)bgTextures;
++ (NSArray *)timeTextures;
++ (NSArray *)timeImages;
 
-+(NSArray *)bgTextures;
++ (id)getTexturesWithSpriteSheetNamed:(NSString *)spriteSheet withinNode: (SKSpriteNode *)scene sourceRect:(CGRect)source andRowNumberOfSprites:(int)rowNumberOfSprites andColNumberOfSprites:(int)colNumberOfSprites;
++ (id)getTexturesWithSpriteSheetNamed: (NSString *) spriteSheet withinNode: (SKSpriteNode *) scene sourceRect: (CGRect) source andRowNumberOfSprites: (int) rowNumberOfSprites andColNumberOfSprites: (int) colNumberOfSprites sequence: (NSArray*) positions;
++ (void)initHandTexturesSourceRect:(CGRect)source andRowNumberOfSprites:(int)rowNumberOfSprites andColNumberOfSprites:(int)colNumberOfSprites;
++ (void)initCatTextures;
++ (void)initTextures;
 
-+(NSArray *)timeTextures;
-
-+(NSArray *)timeImages;
-
-+(id) getTexturesWithSpriteSheetNamed: (NSString *) spriteSheet withinNode: (SKSpriteNode *) scene sourceRect: (CGRect) source andRowNumberOfSprites: (int) rowNumberOfSprites andColNumberOfSprites: (int) colNumberOfSprites;
-+(id) getTexturesWithSpriteSheetNamed: (NSString *) spriteSheet withinNode: (SKSpriteNode *) scene sourceRect: (CGRect) source andRowNumberOfSprites: (int) rowNumberOfSprites andColNumberOfSprites: (int) colNumberOfSprites sequence: (NSArray*) positions;
-+(void) initHandTexturesSourceRect: (CGRect) source andRowNumberOfSprites: (int) rowNumberOfSprites andColNumberOfSprites: (int) colNumberOfSprites;
-+(void) initCatTextures;
-+(void) initTextures;
 @end

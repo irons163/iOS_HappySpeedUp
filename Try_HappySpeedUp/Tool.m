@@ -10,9 +10,9 @@
 
 @implementation Tool
 
--(BOOL)isNeedRemoveInstance{
+- (BOOL)isNeedRemoveInstance {
     bool isNeedRemoveInstance = false;
-    if(self.position.y < 0){
+    if (self.position.y < 0) {
         isNeedRemoveInstance = true;
     }
     return isNeedRemoveInstance;

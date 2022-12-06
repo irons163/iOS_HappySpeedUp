@@ -10,28 +10,28 @@
 
 @implementation Wall
 
--(BOOL)isNeedCreateNewInstance{
+- (BOOL)isNeedCreateNewInstance {
     bool isNeedCreateNewInstance = false;
-    if(self.position.y >= 50){
+    if (self.position.y >= 50) {
         isNeedCreateNewInstance = true;
     }
     return isNeedCreateNewInstance;
 }
 
--(BOOL)isNeedRemoveInstance{
+- (BOOL)isNeedRemoveInstance {
     bool isNeedRemoveInstance = false;
-    if(self.position.y >= self.parent.frame.size.height){
+    if (self.position.y <= 0) {
         isNeedRemoveInstance = true;
     }
     return isNeedRemoveInstance;
 }
 
--(void)move{
-    self.position = CGPointMake(self.position.x, self.position.y-3);
+- (void)move {
+    self.position = CGPointMake(self.position.x, self.position.y - 3);
 }
 
--(void)move:(float)speedY{
-    self.position = CGPointMake(self.position.x, self.position.y-speedY);
+- (void)move:(float)speedY {
+    self.position = CGPointMake(self.position.x, self.position.y - speedY);
 }
 
 @end

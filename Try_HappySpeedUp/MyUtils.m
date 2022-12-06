@@ -11,21 +11,21 @@
 
 @implementation MyUtils
 
-AVAudioPlayer * backgroundMusicPlayer;
+AVAudioPlayer *backgroundMusicPlayer;
 
-+(void)preparePlayBackgroundMusic:(NSString*)filename {
-    NSURL * url = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
++ (void)preparePlayBackgroundMusic:(NSString *)filename {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
     
     if (url == nil) {
         NSLog(@"Could not find file:%@",filename);
         return;
     }
     
-    NSError * error;
+    NSError *error;
     backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     
     if (backgroundMusicPlayer == nil) {
-        NSLog(@"Could not create audio player:%@",error);
+        NSLog(@"Could not create audio player:%@", error);
         return;
     }
     
@@ -33,45 +33,40 @@ AVAudioPlayer * backgroundMusicPlayer;
     [backgroundMusicPlayer prepareToPlay];
 }
 
-+(void)playBackgroundMusic:(NSString*)filename {
-    NSURL * url = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
++ (void)playBackgroundMusic:(NSString *)filename {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:filename withExtension:nil];
     
     if (url == nil) {
-        NSLog(@"Could not find file:%@",filename);
+        NSLog(@"Could not find file:%@", filename);
         return;
     }
     
-    NSError * error;
+    NSError *error;
     backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     
     if (backgroundMusicPlayer == nil) {
-        NSLog(@"Could not create audio player:%@",error);
+        NSLog(@"Could not create audio player:%@", error);
         return;
     }
     
     backgroundMusicPlayer.numberOfLoops = -1;
     [backgroundMusicPlayer prepareToPlay];
     [backgroundMusicPlayer play];
-    
-//    var error: NSError? = nil backgroundMusicPlayer =
-//    AVAudioPlayer(contentsOfURL: url, error: &error) if backgroundMusicPlayer == nil {
-//        println("Could not create audio player: \(error!)")
-//        return
-    }
+}
 
-+(void)backgroundMusicPlayerStop{
++ (void)backgroundMusicPlayerStop {
     [backgroundMusicPlayer stop];
 }
 
-+(void)backgroundMusicPlayerPause{
++ (void)backgroundMusicPlayerPause {
     [backgroundMusicPlayer pause];
 }
 
-+(void)backgroundMusicPlayerPlay{
++ (void)backgroundMusicPlayerPlay {
     [backgroundMusicPlayer play];
 }
 
-+(BOOL)isBackgroundMusicPlayerPlaying{
++ (BOOL)isBackgroundMusicPlayerPlaying {
     return [backgroundMusicPlayer isPlaying];
 }
 

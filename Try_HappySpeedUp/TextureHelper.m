@@ -10,15 +10,10 @@
 
 @implementation TextureHelper
 
-+(id) getTexturesWithSpriteSheetNamed: (NSString *) spriteSheet withinNode: (SKSpriteNode *) scene sourceRect: (CGRect) source andRowNumberOfSprites: (int) rowNumberOfSprites andColNumberOfSprites: (int) colNumberOfSprites{
-    
-    // @param numberOfSprites - the number of sprite images to the left
-    // @param scene - I add my sprite to a map node. Change it to a SKScene
-    // if [self addChild:] is used.
++ (id)getTexturesWithSpriteSheetNamed:(NSString *)spriteSheet withinNode:(SKSpriteNode *)scene sourceRect:(CGRect)source andRowNumberOfSprites:(int)rowNumberOfSprites andColNumberOfSprites:(int)colNumberOfSprites {
     
     NSMutableArray *mAnimatingFrames = [NSMutableArray array];
-    
-        SKTexture  *ssTexture = [SKTexture textureWithImageNamed:spriteSheet];
+    SKTexture  *ssTexture = [SKTexture textureWithImageNamed:spriteSheet];
     
     // Makes the sprite (ssTexture) stay pixelated:
     ssTexture.filteringMode = SKTextureFilteringNearest;
@@ -32,45 +27,33 @@
     // This is why division from the original sprite is necessary.
     // Also why sx is incremented by a fraction.
     
-    for (int i = 0; i < rowNumberOfSprites*colNumberOfSprites; i++) {
-        CGRect cutter = CGRectMake(sx, sy, sWidth/ssTexture.size.width, sHeight/ssTexture.size.height);
-        SKTexture* temp = [SKTexture textureWithRect:cutter inTexture:ssTexture];
+    for (int i = 0; i < rowNumberOfSprites * colNumberOfSprites; i++) {
+        CGRect cutter = CGRectMake(sx, sy, sWidth / ssTexture.size.width, sHeight / ssTexture.size.height);
+        SKTexture *temp = [SKTexture textureWithRect:cutter inTexture:ssTexture];
         [mAnimatingFrames addObject:temp];
         
-//        if(i < colNumberOfSprites){
-            sx+=sWidth/ssTexture.size.width;
-//        }else{
-        if ((i+1)%colNumberOfSprites == 0) {
-            sx=source.origin.x;
-            sy+=sHeight/ssTexture.size.height;
+        sx += sWidth / ssTexture.size.width;
+        if ((i+1) % colNumberOfSprites == 0) {
+            sx = source.origin.x;
+            sy += sHeight / ssTexture.size.height;
         }
-        
     }
-    
-//    self = [Monster spriteNodeWithTexture:mAnimatingFrames[0]];
-    
-//    animatingFrames = mAnimatingFrames;
-    
-//    [scene addChild:self];
     
     return mAnimatingFrames;
 }
 
-+(id) getTexturesWithSpriteSheetNamed: (NSString *) spriteSheet withinNode: (SKSpriteNode *) scene sourceRect: (CGRect) source andRowNumberOfSprites: (int) rowNumberOfSprites andColNumberOfSprites: (int) colNumberOfSprites sequence: (NSArray*) positions{
++ (id)getTexturesWithSpriteSheetNamed:(NSString *)spriteSheet withinNode:(SKSpriteNode *)scene sourceRect:(CGRect)source andRowNumberOfSprites:(int)rowNumberOfSprites andColNumberOfSprites:(int)colNumberOfSprites sequence:(NSArray *)positions {
     
     // @param numberOfSprites - the number of sprite images to the left
     // @param scene - I add my sprite to a map node. Change it to a SKScene
     // if [self addChild:] is used.
     
     NSMutableArray *mAnimatingFrames = [NSMutableArray array];
-    
-//    SKTexture  *ssTexture = [SKTexture textureWithImageNamed:spriteSheet];
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:spriteSheet
                                                      ofType:@"png"];
     UIImage *myImage = [UIImage imageWithContentsOfFile:path];
     
-    SKTexture  *ssTexture = [SKTexture textureWithImage:myImage];
+    SKTexture *ssTexture = [SKTexture textureWithImage:myImage];
     
     // Makes the sprite (ssTexture) stay pixelated:
     ssTexture.filteringMode = SKTextureFilteringNearest;
@@ -84,29 +67,19 @@
     // This is why division from the original sprite is necessary.
     // Also why sx is incremented by a fraction.
     
-    for (int i = 0; i < rowNumberOfSprites*colNumberOfSprites; i++) {
-        CGRect cutter = CGRectMake(sx, sy, sWidth/ssTexture.size.width, sHeight/ssTexture.size.height);
+    for (int i = 0; i < rowNumberOfSprites * colNumberOfSprites; i++) {
+        CGRect cutter = CGRectMake(sx, sy, sWidth / ssTexture.size.width, sHeight / ssTexture.size.height);
         SKTexture *temp = [SKTexture textureWithRect:cutter inTexture:ssTexture];
         [mAnimatingFrames addObject:temp];
         
-        //        if(i < colNumberOfSprites){
-        sx+=sWidth/ssTexture.size.width;
-        //        }else{
-        if ((i+1)%colNumberOfSprites == 0) {
-            sx=source.origin.x;
-            sy+=sHeight/ssTexture.size.height;
+        sx += sWidth / ssTexture.size.width;
+        if ((i + 1) % colNumberOfSprites == 0) {
+            sx = source.origin.x;
+            sy += sHeight / ssTexture.size.height;
         }
-        
     }
     
-    //    self = [Monster spriteNodeWithTexture:mAnimatingFrames[0]];
-    
-    //    animatingFrames = mAnimatingFrames;
-    
-    //    [scene addChild:self];
-    
-    NSMutableArray * array = [NSMutableArray array];
-    
+    NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < positions.count; i++) {
         int sequencePosition = [positions[i] intValue];
         [array addObject: mAnimatingFrames[sequencePosition]];

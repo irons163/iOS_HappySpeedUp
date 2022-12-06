@@ -17,9 +17,10 @@
 @property (nonatomic, weak) id<pauseGameDelegate> delegate;
 
 + (id)sharedInstance;
-- (BOOL) isGameCenterAvailable;
-- (void)authenticateLocalUser:(UIViewController*)viewController;
-- (void)showGameCenter:(UIViewController*)viewController;
-- (void) reportScore: (int64_t) score forCategory: (NSString*) category;
+- (BOOL)isGameCenterAvailable;
+- (void)authenticateLocalUser:(UIViewController *)viewController;
+- (void)showGameCenter:(UIViewController *)viewController;
+- (void)reportScore:(int64_t)score forCategory:(NSString *)category;
 - (void)submitAllSavedScores;
+
 @end

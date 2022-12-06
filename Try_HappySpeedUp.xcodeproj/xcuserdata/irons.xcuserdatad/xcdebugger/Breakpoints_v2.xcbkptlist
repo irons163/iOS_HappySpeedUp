@@ -15,8 +15,8 @@
             timestampString = "465436530.311829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "324"
-            endingLineNumber = "324"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "-createWallLineWithLeftX:WithRightX:WithY:enableOffsetX:"
             landmarkType = "7">
          </BreakpointContent>
@@ -35,23 +35,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "294A6D02-FE84-49A7-BC9F-D8E233A8FA3C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Try_HappySpeedUp/GameScene.m"
-            timestampString = "465480142.441587"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "574"
-            endingLineNumber = "574"
-            landmarkName = "-checkEatTool"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "13367095-2AE1-4F88-A954-72B6FEEC069B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -60,8 +43,8 @@
             timestampString = "465480142.441587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "637"
-            endingLineNumber = "637"
+            startingLineNumber = "568"
+            endingLineNumber = "568"
             landmarkName = "-speedUp"
             landmarkType = "7">
          </BreakpointContent>
@@ -77,8 +60,8 @@
             timestampString = "465480142.441587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "652"
-            endingLineNumber = "652"
+            startingLineNumber = "583"
+            endingLineNumber = "583"
             landmarkName = "-speedDown"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,17 +69,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "42F448B6-8B7C-4FB0-89F5-915FE7D98476"
+            uuid = "3778026C-5C4E-4F80-94C5-82C151DBF82D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Try_HappySpeedUp/GameScene.m"
-            timestampString = "465725634.674019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "497"
-            endingLineNumber = "497"
-            landmarkName = "-doWallMoveAndCollisionDetectedAndCreateAndRemoveWall"
+            startingLineNumber = "546"
+            endingLineNumber = "546"
+            landmarkName = "-createToolWithToolX:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08EFA470-3D0F-495C-8543-36AFA0B5B631"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Try_HappySpeedUp/Wall.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-isNeedRemoveInstance"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

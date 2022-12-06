@@ -8,25 +8,19 @@
 
 #import "MyADView.h"
 
-@implementation MyADView{
-//    SKTexture * ad1, * ad2, *ad3;
-    NSArray* ads, *adsUrl;
+@implementation MyADView {
+    NSArray *ads, *adsUrl;
     int adIndex;
-    SKSpriteNode* button;
-    NSTimer * timer;
+    SKSpriteNode *button;
+    NSTimer *timer;
 }
 
-//+(instancetype)spriteNodeWithTexture:(SKTexture *)texture{
-//    
-//}
-
--(void)startAd{
-    
-    NSString* catAdImageName;
+- (void)startAd {
+    NSString *catAdImageName;
     int randomCatAd = arc4random_uniform(2);
-    if(randomCatAd==0){
+    if (randomCatAd == 0) {
         catAdImageName = @"unlimited_cat_world_ad";
-    }else{
+    } else {
         catAdImageName = @"UnlimitedCatWorld_ad";
     }
     
@@ -57,74 +51,44 @@
     button.size = CGSizeMake(30, 30);
     button.position = CGPointMake(self.size.width/2 - button.size.width, self.size.height - button.size.height);
     button.anchorPoint = CGPointMake(0, 0);
-    button.zPosition =5;
+    button.zPosition = 5;
     [self addChild:button];
 }
 
--(void)changeAd{
-//    if(adIndex==1){
-//        self.texture = ad2;
-//        adIndex = 2;
-//    }else if(adIndex==2){
-//        self.texture = ad3;
-//        adIndex = 3;
-//    }else if(adIndex==3){
-//        self.texture = ad1;
-//        adIndex = 1;
-//    }
-    
+- (void)changeAd {
     adIndex++;
-    if(adIndex < ads.count){
+    if (adIndex < ads.count) {
         self.texture = ads[adIndex];
-    }else{
+    } else {
         adIndex = 0;
         self.texture = ads[adIndex];
     }
 }
 
--(void)doClick{
-//    if(adIndex==1){
-//        [];
-//    }else if(adIndex==2){
-//        
-//    }else if(adIndex==3){
-//        
-//    }
-    
-    NSString* url = adsUrl[adIndex];
+- (void)doClick {
+    NSString *url = adsUrl[adIndex];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    if(self.hidden)
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if (self.hidden)
         return;
         
-    UITouch * touch = [touches anyObject];
+    UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     
-    if([button containsPoint:location]){
+    if ([button containsPoint:location]) {
         self.hidden = YES;
-    }else if(location.y < self.size.height){
+    } else if (location.y < self.size.height) {
         [self doClick];
     }
 }
 
--(void)close{
-    if(timer){
+- (void)close {
+    if (timer) {
         [timer invalidate];
         timer = nil;
     }
 }
-
-//-(void)init{
-//    MyADView ad = [MyADView spriteNodeWithColor:[UIColor redColor] size:{10,10}];
-//    
-//    [ad childFunction];
-//}
-//
-//+ (id)spriteNodeWithColor:(UIColor*)color size:(CGSize)size {
-//    return [[SKSpriteNode init] autorelease];
-//}
 
 @end

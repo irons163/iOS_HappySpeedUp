@@ -13,9 +13,9 @@
 
 @protocol gameDelegate <NSObject>
 
--(void)showGameOver;
--(void)showRankView;
--(void)restartGame;
+- (void)showGameOver;
+- (void)showRankView;
+- (void)restartGame;
 
 @end
 

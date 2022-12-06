@@ -8,7 +8,7 @@
 
 #import "CommonUtil.h"
 
-static CommonUtil* instance;
+static CommonUtil *instance;
 
 @implementation CommonUtil
 

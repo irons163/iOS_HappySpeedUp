@@ -10,8 +10,9 @@
 
 @interface Wall : SKSpriteNode
 
--(BOOL)isNeedCreateNewInstance;
--(BOOL)isNeedRemoveInstance;
--(void)move;
--(void)move:(float)speedY;
+- (BOOL)isNeedCreateNewInstance;
+- (BOOL)isNeedRemoveInstance;
+- (void)move;
+- (void)move:(float)speedY;
+
 @end
