@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@import iAd;
-
 @protocol gameDelegate <NSObject>
 
 - (void)showGameOver;
@@ -19,6 +17,6 @@
 
 @end
 
-@interface GameViewController : UIViewController<ADBannerViewDelegate, gameDelegate>
+@interface GameViewController : UIViewController<gameDelegate>
 
 @end

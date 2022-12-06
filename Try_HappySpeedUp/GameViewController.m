@@ -31,7 +31,6 @@
 @end
 
 @implementation GameViewController{
-    ADBannerView *adBannerView;
     GameScene *scene;
 }
 
@@ -47,11 +46,6 @@
     
     // Create and configure the scene.
     [self initAndaddScene:skView];
-    
-    adBannerView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, -50, 200, 30)];
-    adBannerView.delegate = self;
-    adBannerView.alpha = 1.0f;
-    [self.view addSubview:adBannerView];
 }
 
 - (void)initAndaddScene:(SKView *)skView {
@@ -106,35 +100,6 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
-}
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    [self layoutAnimated:true];
-}
-
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    [self layoutAnimated:true];
-}
-
-- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave {
-    return true;
-}
-
-- (void)layoutAnimated:(BOOL)animated {
-    CGRect contentFrame = self.view.bounds;
-    CGRect bannerFrame = adBannerView.frame;
-    if (adBannerView.bannerLoaded) {
-        contentFrame.size.height = 0;
-        bannerFrame.origin.y = contentFrame.size.height;
-    } else {
-        bannerFrame.origin.y = -50;
-    }
-    
-    [UIView animateWithDuration:animated ? 0.25 : 0.0 animations:^{
-        adBannerView.frame = contentFrame;
-        [adBannerView layoutIfNeeded];
-        adBannerView.frame = bannerFrame;
-    }];
 }
 
 @end
